@@ -1,0 +1,25 @@
+﻿body {
+    background-image: url('../img/photo-1571997478779-2adcbbe9ab2f.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.container-narrow {
+    background: url('../img/interlaced.png') repeat 0 0;
+    max-width: 600px;
+}
+
+h1{
+    color: white;
+    text-align: center;
+}
+h2{
+    font-weight: bold;
+    text-align: center;
+}
+
+.info{
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+}

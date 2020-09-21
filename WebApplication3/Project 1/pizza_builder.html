@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../Project 1/style/pizzaStyle.css" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-3.0.0.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/popper.min.js"></script>
+</head>
+
+<body>
+    
+    <div class="container-narrow">
+        <form method="post" action="PizzaProcessor.aspx">
+            <h1>Who is the pizza for?</h1>
+            <div class="input">
+                <br />
+                Name:<input class="form-control" name="txtName" type="text" required/><br />
+                Address:<input class="form-control" name="txtAddress" type="text" required/><br />
+                Phone Number:<input class="form-control" name="txtPhone" type="text" pattern="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}" value="###-###-####" /><br />
+                <br />
+                <br />
+                Delivery or Pick up? <select name="deliveryDrpDwn" id="delivery">
+                    <option value="Pick Up">Pick Up</option>
+                    <option value="Delivery">Delivery(+3.00$ delivery fee)</option>
+                </select>
+            </div>
+            <br />
+            <br />
+
+            <h1>Build Your Pizza</h1>
+            <br />
+            Size:
+            <select class="form-control" name="sizeDrpDwn" id="pizzaSize">
+                <option value="Small">Small(7.99$)</option>
+                <option value="Medium">Medium(8.99$)</option>
+                <option value="Large">Large(10.99$)</option>
+                <option value="Extra Large">Extra Large(12.99$)</option>
+                <option value="Immense">Immense(14.99$)</option>
+            </select>
+            <br />
+            <br />
+
+            Crust Type:
+            <select class="form-control" name="crustDrpDwn" id="crust">
+                <option value="Regular Crust">Regular</option>
+                <option value="Thin Crust">Thin Crust</option>
+                <option value="Stuffed Crust">Mozzerlla Stuffed Crust(+1.00$)</option>
+                <option value="Deep Dish Crust">Deep Dish(+1.00$)</option>
+                <option value="Garlic Butter Crust">Cheesy Garlic Butter Crust(+2.00$)</option>
+            </select>
+            <br />
+            <br />
+            Sauce(Choose One):
+            <div></div>
+            <input  type="radio" id="sauce1" name="sauceType" value="Homemade Sauce" checked>
+            <label for="sauce1">Homemade Tomato Sauce</label>
+            <input  type="radio" id="sauce2" name="sauceType" value="Garlic Sauce">
+            <label for="sauce2">Garlic and Oil White Sauce</label><br />
+            <input  type="radio" id="sauce3" name="sauceType" value="BBQ Sauce">
+            <label for="sauce3">Smokey BBQ Sauce</label>
+            <input type="radio" id="sauce4" name="sauceType" value="Pumpkin Sauce">
+            <label for="sauce4">Pumpkin and Beet Marinara(+$1.00)</label>
+            <br />
+            <br />
+            <br />
+            <!--Toppings Start-->
+            <table class="table table-striped table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Toppings:</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Meat(+.75$ per)</th>
+                        <td>
+                            <input type="checkbox" id="topping1" name="toppings" value="Pepperoni">
+                            <label for="topping1">Pepperoni</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="topping2" name="toppings" value="Sausage">
+                            <label for="topping2">Sausage</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="topping3" name="toppings" value="Bacon">
+                            <label for="topping3">Bacon</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="topping4" name="toppings" value="Ham">
+                            <label for="topping4">Ham</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="topping5" name="toppings" value="Chicken">
+                            <label for="topping5">Grilled BBQ Chicken</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="topping6" name="toppings" value="Shrimp">
+                            <label for="topping6">Shrimp</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Vegetables(+.50$ per)</th>
+                        <td>
+                            <input type="checkbox" id="topping7" name="toppings" value="Hot Peppers">
+                            <label for="topping7">Hot Peppers</label><br>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="topping8" name="toppings" value="Sweet Peppers">
+                            <label for="topping8">Sweet Peppers</label><br>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="topping9" name="toppings" value="Onion">
+                            <label for="topping9">Onion</label><br>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="topping10" name="toppings" value="Black Olives">
+                            <label for="topping10">Black Olives</label><br>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="topping11" name="toppings" value="Mushroom">
+                            <label for="topping11">Mushrooms</label><br>
+                        </td>
+                        <td></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Misc(+.50$ per)</th>
+                        <td>
+                            <input type="checkbox" id="topping12" name="toppings" value="Pineapple">
+                            <label for="topping12">Pineapple</label><br>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="topping13" name="toppings" value="Apple">
+                            <label for="topping13">Maple Apple</label><br>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="topping14" name="toppings" value="Garlic">
+                            <label for="topping14">Garlic</label><br>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="topping15" name="toppings" value="Mozzarella">
+                            <label for="topping15">Mozzarella</label><br>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="topping16" name="toppings" value="Ricotta">
+                            <label for="topping16">Ricotta</label><br>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Premium Toppings(+1.00$ per)</th>
+                        <td>
+                            <input type="checkbox" id="pTopping1" name="pToppings" value="Extra Cheese">
+                            <label for="pTopping1">Extra Cheese</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="pTopping2" name="pToppings" value="Avocado">
+                            <label for="pTopping2">Avocado</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="pTopping3" name="pToppings" value="Caviar">
+                            <label for="pTopping3">Caviar</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="pTopping4" name="pToppings" value="Roasted Veggies">
+                            <label for="pTopping4">Roasted Tomatoes and Peppers</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="pTopping5" name="pToppings" value="Kalamata Olives">
+                            <label for="pTopping5">Kalamata Olives</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="pTopping6" name="pToppings" value="Wagyu">
+                            <label for="pTopping6">100% Authentic Wagyu Beef(+$50.00)</label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!--Toppings End-->
+            <br />
+            <br />
+            Upgrade to Family Meal for 2 Liter Soda and Side?
+            <select class="form-control" name="familyDrpDwn" id="familyMeal">
+                <option value="No Upgrade">Don't Upgrade</option>
+                <option value="Upgrade">Upgrade(+8.00$)</option>
+            </select>
+            <br />
+            <div id="upgradeOptions">
+                Choose Drink:
+                <select name="familyDrinkDrpDwn" id="familyDrink">
+                    <option value="noDrink">Choose Drink...</option>
+                    <option value="Sprite">Sprite</option>
+                    <option value="Dr. Pepper">Dr. Pepper</option>
+                    <option value="A&W Root Beer">A&W Root Beer</option>
+                    <option value="Cream Soda">Cream Soda</option>
+                    <option value="Coke">Coke</option>
+                    <option value="Fanta">Fanta</option>
+                </select>
+
+                <br />
+                <br />
+                Choose Side:
+                <select name="familySideDrpDwn" id="familySide">
+                    <option value="noSide">Choose Side...</option>
+                    <option value="Buffalo Wings">Buffalo Wings</option>
+                    <option value="Loaded Nachoes">Loaded Nachoes</option>
+                    <option value="Loaded Fries">Loaded Fries</option>
+                    <option value="Pizza Fries">Pizza Fries</option>
+                    <option value="Jalopeno Chicken Tenders">Jalopeno Chicken Tenders</option>
+                </select>
+
+            </div>
+
+            <br />
+            <br />
+
+
+
+
+
+
+
+
+
+            Thank our wonderful Staff with a tip?: <input name="txtTip" type="text" pattern="^([0-9]{1,3},([0-9]{3},)*[0-9]{3}|[0-9]+)(\.[0-9][0-9])+?$" value="0.00" />
+            <br />
+            <br />
+
+
+
+
+            <input name="btnSubmit" type="submit" value="Calculate Total"><br />
+
+        </form>
+    </div>
+    <!--Script to handle hiding(and resetting)/showing the family mean plan options based on the drop down value-->
+    <script>
+        $(document).ready(function () {
+
+            $(familyMeal).change(function () {
+
+                $(this).find("option:selected").each(function () {
+
+                    var optionValue = $(this).attr("value");
+
+                    if (optionValue == "Upgrade") {
+                        $(upgradeOptions).show();
+                    } else {
+                        $(upgradeOptions).hide();
+                        $(familySide).prop('selectedIndex', 0);
+                        $(familyDrink).prop('selectedIndex', 0);
+                    }
+                });
+
+            }).change();
+
+        });
+
+
+    </script>
+
+</body>
+</html>
